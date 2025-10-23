@@ -1,7 +1,11 @@
 # temp_conversion_tool.py
 # Objective: Demonstrate variable scope using global conversion factors for temperature conversion.
 
-# --- Global Conversion Factors ---
+# --- Definition of Global Conversion Factors ---
+# These constants define how temperatures are converted between Fahrenheit and Celsius.
+# FAHRENHEIT_TO_CELSIUS_FACTOR: Multiply the Fahrenheit difference (F - 32) by this factor to get Celsius.
+# CELSIUS_TO_FAHRENHEIT_FACTOR: Multiply the Celsius value by this factor and add 32 to get Fahrenheit.
+
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
@@ -10,6 +14,7 @@ CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 def convert_to_celsius(fahrenheit):
     """
     Converts a temperature from Fahrenheit to Celsius using the global conversion factor.
+    Formula: (F - 32) * 5/9
     """
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
@@ -17,6 +22,7 @@ def convert_to_celsius(fahrenheit):
 def convert_to_fahrenheit(celsius):
     """
     Converts a temperature from Celsius to Fahrenheit using the global conversion factor.
+    Formula: (C * 9/5) + 32
     """
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
@@ -44,3 +50,4 @@ def main():
 # --- Script Entry Point ---
 if __name__ == "__main__":
     main()
+
