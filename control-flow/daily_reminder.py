@@ -1,26 +1,25 @@
 # daily_reminder.py
 # Objective: Use conditionals, match case, and loops to remind the user about a single, priority task based on time sensitivity.
 
-# Loop to allow user to enter at least one valid task
 while True:
-    # Prompt for task details
+    # Prompt for user input
     task = input("Enter your task: ")
     priority = input("Priority (high/medium/low): ").lower()
     time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-    # Process the task based on priority using match case
+    # Use match case to process based on priority
     match priority:
         case "high":
             reminder = f"Reminder: '{task}' is a high priority task"
         case "medium":
             reminder = f"Reminder: '{task}' is a medium priority task"
         case "low":
-            reminder = f"Note: '{task}' is a low priority task"
+            reminder = f"Reminder: '{task}' is a low priority task"
         case _:
             print("Invalid priority entered. Please use 'high', 'medium', or 'low'.\n")
-            continue  # Repeats the loop if invalid input
+            continue  # Repeat loop if invalid input is given
 
-    # Add additional message based on time sensitivity
+    # Add message based on time sensitivity
     if time_bound == "yes":
         reminder += " that requires immediate attention today!"
     else:
@@ -29,10 +28,10 @@ while True:
         else:
             reminder += " that you can schedule for later today."
 
-    # Display final customized reminder
+    # Display the customized reminder
     print("\n" + reminder + "\n")
 
-    # Option to stop or repeat
+    # Ask if the user wants to enter another task
     repeat = input("Would you like to enter another task? (yes/no): ").lower()
     if repeat != "yes":
         print("All reminders set. Have a productive day!")
